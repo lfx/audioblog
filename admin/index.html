@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioBlog Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #10b981;
+        }
+        main { padding-top: 2rem; }
+        .hidden { display: none; }
+        #recording-indicator { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>AudioBlog Admin</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" id="settings-link">Settings</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="settings-section" class="hidden">
+            <h2>Settings</h2>
+            <form id="settings-form">
+                <label for="gemini-key">Gemini API Key</label>
+                <input type="password" id="gemini-key" placeholder="AI..." required>
+                
+                <label for="github-pat">GitHub PAT</label>
+                <input type="password" id="github-pat" placeholder="ghp_...">
+                
+                <div class="grid">
+                    <div>
+                        <label for="github-owner">GitHub Owner</label>
+                        <input type="text" id="github-owner" placeholder="username">
+                    </div>
+                    <div>
+                        <label for="github-repo">GitHub Repo</label>
+                        <input type="text" id="github-repo" placeholder="audioblog">
+                    </div>
+                </div>
+                <button type="submit">Save Settings</button>
+            </form>
+        </section>
+
+        <section id="main-section">
+            <div id="recording-controls">
+                <h2>New Audio Post</h2>
+                <div class="grid">
+                    <button id="start-btn">Start Recording</button>
+                    <button id="stop-btn" disabled>Stop Recording</button>
+                </div>
+                <p id="recording-indicator" class="hidden">● Recording...</p>
+                <audio id="audio-preview" controls class="hidden"></audio>
+            </div>
+
+            <div id="transcription-section" class="hidden">
+                <hr>
+                <button id="transcribe-btn">Transcribe with Gemini</button>
+                <div id="loading-indicator" class="hidden" aria-busy="true">Transcribing...</div>
+                
+                <div id="edit-section" class="hidden">
+                    <label for="post-title">Title</label>
+                    <input type="text" id="post-title">
+                    
+                    <label for="post-content">Transcription</label>
+                    <textarea id="post-content" rows="10"></textarea>
+                    
+                    <button id="publish-btn">Publish to Blog</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

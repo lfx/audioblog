@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
+  </header>
+
+  <div class="post-content">
+    {% if page.audio %}
+      <div class="audio-player" style="margin-bottom: 2rem;">
+        <audio controls src="{{ page.audio | relative_url }}" style="width: 100%;"></audio>
+      </div>
+    {% endif %}
+    
+    {{ content }}
+  </div>
+</article>

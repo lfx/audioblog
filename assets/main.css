@@ -1,0 +1,19 @@
+/* Minimal main.css for Jekyll Minima-like experience */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.wrapper { width: 100%; }
+.site-header { border-bottom: 1px solid #eee; margin-bottom: 2rem; }
+.site-title { font-weight: bold; font-size: 1.5rem; text-decoration: none; color: #10b981; }
+.post-list { list-style: none; padding: 0; }
+.post-list li { margin-bottom: 2rem; border-bottom: 1px solid #f9f9f9; padding-bottom: 1rem; }
+.post-meta { color: #888; font-size: 0.9rem; }
+.post-link { text-decoration: none; color: #111; }
+.post-link:hover { color: #10b981; }
+audio { width: 100%; margin-top: 0.5rem; }
+footer { margin-top: 4rem; color: #888; font-size: 0.8rem; border-top: 1px solid #eee; padding-top: 1rem; }
